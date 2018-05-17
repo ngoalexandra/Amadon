@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Amadon</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<style>
+    .container {
+        width: 1000px;
+        height: 270px;
+        border: 3px solid black;
+        
+    }
+
+    .table {
+        width: 650px;
+    }
+
+
+</style>
+
+<body>
+    <div class="container">
+        <h4>Buy items here:</h4>
+        <div class="row col-md-6 col-md-offset-2 custyle">
+            <table class="table table-striped custab">
+                <thead>
+                    <tr class = 'head'>
+                        <th>Item</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th class="text-center">Purchase</th>
+                    </tr>
+                </thead>
+
+                <!-- first form -->
+                <form action='/process' method='post'>
+                    {% csrf_token %}
+                    <tr class='table'>
+                        <td name='item'>T-Shirt</td>
+                        <td>
+                            $18.99<input type='hidden' name='product_id' value = '1'>
+                        </td>
+                        <td>
+                            <select name='quantity'>
+                                <option value='1'>1</option>
+                                <option value='2'>2</option>
+                                <option value='3'>3</option>
+                                <option value='4'>4</option>
+                                <option value='5'>5</option>
+                            </select>
+                        </td>
+                        <td name='buy' class="text-center">
+                            <!-- <a class='btn btn-info btn-xs'>
+                                <span class="glyphicon glyphicon-edit"></span> Buy</a> -->
+                                <input type = 'submit' value = 'Buy'>
+                        </td>
+                    </tr>
+                </form>
+
+                <!-- second form -->
+                <form action='/process' method='post'>
+                    {% csrf_token %}
+                    <tr class='table'>
+                        <td name='item'>Sweater </td>
+                        <td>
+                            $27.99<input type='hidden' name='product_id' value = '2'>
+                        </td>
+                        <td>
+                            <select name='quantity'>
+                                <option value='1'>1</option>
+                                <option value='2'>2</option>
+                                <option value='3'>3</option>
+                                <option value='4'>4</option>
+                                <option value='5'>5</option>
+                            </select>
+                        </td>
+                        <td class="text-center">
+                            <!-- <a class='btn btn-info btn-xs'>
+                                <span class="glyphicon glyphicon-edit"></span> Buy</a> -->
+                                <input type = 'submit' value = 'Buy'>
+                        </td>
+                    </tr>
+                </form>
+
+                <!-- third form -->
+                <form action='/process' method='post'>
+                    {% csrf_token %}
+                    <tr class='table'>
+                        <td name ='item'>Algo Book</td>
+                        <td>
+                            $12.99<input type='hidden' name='product_id' value = '3'>
+                        </td>
+                        <td>
+                            <select name='quantity'>
+                                <option value='1'>1</option>
+                                <option value='2'>2</option>
+                                <option value='3'>3</option>
+                                <option value='4'>4</option>
+                                <option value='5'>5</option>
+                            </select>
+                        </td>
+                        <td class="text-center">
+                            <input type = 'submit' value = 'Buy'>
+                            <!-- <a class='btn btn-info btn-xs' >
+                                <span class="glyphicon glyphicon-edit"></span> Buy</a> -->
+                        </td>
+                    </tr>
+                </form>
+
+                <!-- fourth form -->
+                <form action='/process' method='post'>
+                    {% csrf_token %}
+                    <tr class='table'>
+                        <td name='item'>Coffee Cup </td>
+                        <td>
+                            $4.99<input type='hidden' name='product_id' value = '4'>
+                        </td>
+                        <td>
+                            <select name='quantity'>
+                                <option value='1'>1</option>
+                                <option value='2'>2</option>
+                                <option value='3'>3</option>
+                                <option value='4'>4</option>
+                                <option value='5'>5</option>
+                            </select>
+                        </td>
+                        <td name='buy' class="text-center">
+                            <!-- <a class='btn btn-info btn-xs' >
+                                <span class="glyphicon glyphicon-edit"></span> Buy</a> -->
+                                <input type = 'submit' value = 'Buy'>
+                        </td>
+                    </tr>
+                </form>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
